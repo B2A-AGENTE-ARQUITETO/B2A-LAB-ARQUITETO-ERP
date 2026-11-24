@@ -1,0 +1,111 @@
+# Tools Catalog — Catálogo de Ferramentas Disponíveis
+
+**Versão:** 1.0.0 · **Última atualização:** 2026-11-24
+
+## Classificação
+
+| Status | Significado |
+|---|---|
+| `available` | Disponível para uso sem autorização adicional |
+| `pending_authorization` | Solicitado, aguardando aprovação do proprietário |
+| `verified` | Autorizado, verificado e pronto para uso |
+| `denied` | Solicitado e negado pelo proprietário |
+| `deprecated` | Removido, não usar |
+
+## Tipos de ferramenta
+
+| `kind` | Mecanismo |
+|---|---|
+| `internal` | Implementação nativa do runtime OpenBot ou do Arquiteto |
+| `mcp` | MCP server externo (Model Context Protocol) |
+| `http` | Cliente HTTP com auth header |
+| `cli` | Subprocesso local com allowlist |
+| `architect_developed` | Implementação própria em `tools/developed/<tool_id>/` |
+
+---
+
+## Ferramentas Nativas OpenBot
+
+Disponíveis sem configuração adicional. Status: `available`.
+
+| ID | Kind | Permissions | Status |
+|---|---|---|---|
+| `openbot.ask_user` | native | [ask] | available |
+| `openbot.attach_files_to_response` | native | [write_response] | available |
+| `openbot.list_agents` | native | [read] | available |
+| `openbot.send_message` | native | [write] | available |
+| `openbot.search_memories` | native | [read] | available |
+| `openbot.remember` | native | [write] | available |
+| `openbot.forget_memory` | native | [write] | available |
+| `openbot.react_to_user_message` | native | [write] | available |
+| `openbot.request_api_key` | native | [request_secret] | available |
+| `openbot.routine_no_update` | native | [report] | available |
+| `openbot.routine_report_failure` | native | [report] | available |
+| `openbot.history_search` | native | [read] | available |
+| `openbot.history_read` | native | [read] | available |
+
+## Ferramentas Internas do Arquiteto
+
+Disponíveis após implementação das respectivas Fases (ver `memory/tools-registry.md`).
+
+| ID | Kind | Permissions | Status | Fase |
+|---|---|---|---|---|
+| `architect.spec.create` | internal | [write] | pending_implementation | Fase 2 |
+| `architect.spec.read` | internal | [read] | pending_implementation | Fase 2 |
+| `architect.spec.write` | internal | [write] | pending_implementation | Fase 2 |
+| `architect.spec.validate` | internal | [read] | pending_implementation | Fase 2 |
+| `architect.tool.catalog.list` | internal | [read] | pending_implementation | Fase 2 |
+| `architect.tool.request` | internal | [write] | pending_implementation | Fase 2 |
+| `architect.provision.create` | internal | [write] | pending_implementation | Fase 3 |
+| `architect.execute.run` | internal | [execute] | pending_implementation | Fase 4 |
+| `architect.test.run` | internal | [execute] | pending_implementation | Fase 5 |
+| `architect.test.evaluate` | internal | [read] | pending_implementation | Fase 5 |
+| `architect.memory.read` | internal | [read] | pending_implementation | Fase 2 |
+| `architect.memory.write` | internal | [write] | pending_implementation | Fase 2 |
+| `architect.knowledge.read` | internal | [read] | pending_implementation | Fase 10 |
+| `architect.knowledge.search` | internal | [read] | pending_implementation | Fase 10 |
+| `architect.knowledge.consult` | internal | [read] | pending_implementation | Fase 10 |
+| `architect.conversation.open` | internal | [write] | pending_implementation | Fase 11 |
+| `architect.conversation.post` | internal | [write] | pending_implementation | Fase 11 |
+| `architect.develop.research` | internal | [read] | pending_implementation | Fase 12 |
+| `architect.develop.design` | internal | [write] | pending_implementation | Fase 12 |
+| `architect.develop.implement` | internal | [write] | pending_implementation | Fase 12 |
+| `architect.develop.test` | internal | [execute] | pending_implementation | Fase 12 |
+| `architect.develop.register` | internal | [write] | pending_implementation | Fase 12 |
+
+## MCPs Externos
+
+_Nenhum MCP externo configurado ainda. Solicitações pendentes aparecem em `pending.md`._
+
+## Ferramentas Próprias (`architect_developed`)
+
+_Nenhuma ferramenta própria desenvolvida ainda._
+
+---
+
+## Denylist (NUNCA acessar, mesmo com autorização)
+
+| Host | Motivo |
+|---|---|
+| `appsite-erp-b2-a-engenharia.vercel.app` | ERP B2A em produção — acesso apenas via fluxo especial do AGENTS.md §11 |
+| `n8nb2aengenharia.site` | Instância n8n do B2A — acesso apenas via fluxo especial |
+| Hosts sob `supabase.co` cujo project refira-se ao B2A | Banco de dados do ERP B2A |
+
+Tentativa de acessar qualquer host da denylist resulta em:
+1. Bloqueio imediato pelo interceptor.
+2. Log `kind=security_violation` em `memory/incidents.md`.
+3. Suspensão do funcionário que tentou.
+4. Notificação ao proprietário.
+
+## Procedimento para solicitar nova ferramenta
+
+Ver `knowledge/ecosystem/estrategia-integracao-ferramentas.md` seção "Acesso progressivo" e skill `tool-integration`.
+
+Resumo:
+1. Pesquisar candidatos em fontes públicas (ver skill `tool-integration`).
+2. Registrar pesquisa em `memory/research-log.md`.
+3. Abrir solicitação em `pending.md`.
+4. Aguardar aprovação em `granted.md`.
+5. Configurar conexão (sem secrets em arquivo).
+6. Verificar com `tool.verify`.
+7. Marcar como `verified` neste catálogo.
