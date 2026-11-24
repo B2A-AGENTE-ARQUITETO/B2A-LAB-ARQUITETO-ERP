@@ -1,0 +1,29 @@
+# Ferramentas autorizadas para este funcionário
+# Apenas ferramentas com status: verified em permissions/tools-catalog.yaml
+# permissions_used deve ser subset do que a ferramenta permite
+# scope deve ser subset do approved_scope em permissions/granted.md
+
+tools:
+  # Exemplo (remover o comentario e substituir quando necessario):
+  # - id: mcp.github
+  #   kind: mcp
+  #   permissions_used: [read]
+  #   scope:
+  #     repositories: ["org/repo-x"]
+  #     operations: ["list_issues", "read_file"]
+  #   reason: "Funcionario precisa listar issues para classificar"
+
+  # Ferramentas internas sempre disponiveis:
+  - id: internal.read
+    kind: internal
+    permissions_used: [read]
+    reason: "Ler arquivos do proprio workspace"
+
+  - id: internal.write
+    kind: internal
+    permissions_used: [write]
+    reason: "Escrever arquivos no proprio workspace"
+
+# Se nenhuma ferramenta externa e necessaria, mantenha apenas as internas acima.
+# Se ferramenta necessaria nao esta aprovada, abrir solicitacao em:
+# permissions/pending.md

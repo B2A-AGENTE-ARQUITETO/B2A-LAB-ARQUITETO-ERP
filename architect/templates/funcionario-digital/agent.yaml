@@ -1,0 +1,38 @@
+# Manifesto do Funcionário Digital
+# Substitua todos os <PLACEHOLDERS> antes de commitar.
+
+id: <PLACEHOLDER_AGENT_ID>            # kebab-case; prefixo ficticio- para testes
+display_name: <PLACEHOLDER_DISPLAY_NAME>
+role: <PLACEHOLDER_ROLE>              # cargo curto
+version: 1.0.0
+created_at: <PLACEHOLDER_ISO_8601>
+created_by: agente-arquiteto
+parent_commit: <PLACEHOLDER_GIT_SHA>
+
+mission: <PLACEHOLDER_MISSION_ONE_SENTENCE>
+
+responsibilities:
+  - <PLACEHOLDER_RESPONSIBILITY_1>
+  - <PLACEHOLDER_RESPONSIBILITY_2>
+  - <PLACEHOLDER_RESPONSIBILITY_3>
+
+limits:
+  - <PLACEHOLDER_LIMIT_1>             # ex.: "Não acessa internet sem autorização"
+  - <PLACEHOLDER_LIMIT_2>             # ex.: "Não armazena dados de produção"
+
+provider:
+  primary: <PLACEHOLDER_PROVIDER>     # codex | claude | gemini | ...
+  fallback: []                        # [<provider>, ...]
+  model: <PLACEHOLDER_MODEL>          # ex.: gpt-5, claude-sonnet-4
+
+permissions_profile: workspace_only   # workspace_only | ask_first (NUNCA full_access em ficticios)
+
+tools:
+  file: tools.yaml
+
+knowledge:
+  folder: knowledge                   # opcional; remover se não houver
+
+tests:
+  folder: tests
+  threshold: 0.85                     # score minimo para aprovacao

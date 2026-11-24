@@ -1,0 +1,14 @@
+{
+  "_comment": "Fixture ficticio para caso de teste. Substitua por dados relevantes ao funcionario.",
+  "_warning": "DADOS FICTICIOS - NUNCA usar dados reais de producao",
+  "id": "fixture-case-001",
+  "type": "<PLACEHOLDER_TYPE>",
+  "content": {
+    "field1": "valor_ficticio_1",
+    "field2": "valor_ficticio_2"
+  },
+  "expected_keys": [
+    "<PLACEHOLDER_EXPECTED_KEY_1>",
+    "<PLACEHOLDER_EXPECTED_KEY_2>"
+  ]
+}
