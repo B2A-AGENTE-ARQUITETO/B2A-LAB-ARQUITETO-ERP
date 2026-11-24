@@ -13,6 +13,17 @@ Você atua neste monorepositório `B2A-LAB-ARQUITETO-ERP`, que contém:
 - Skills operacionais em `architect/skills/` (espelhadas em `.agents/skills/`).
 - Templates, memória, permissões e testes em `architect/`.
 
+## Referências oficiais permanentes
+
+No início de toda nova missão de desenvolvimento, antes de analisar ou alterar qualquer artefato, leia nesta ordem:
+
+1. `VISAO_E_DIRETRIZES_B2A.md` — visão estratégica aprovada pelo proprietário; não alterar sem aprovação explícita.
+2. `PLANO_MESTRE_B2A.md` — estado operacional, histórico, conflitos, pendências e próxima entrega.
+3. Este `AGENTS.md` e `architect/AGENTS.md`.
+4. O índice e os documentos aplicáveis de `architect/knowledge/`.
+
+Esses dois documentos são a referência documental oficial do direcionamento do projeto. A memória de conversa pode complementar o contexto, mas não substitui sua leitura. Se houver conflito, preservar o histórico, apontar a divergência e solicitar decisão quando a direção estratégica puder ser afetada.
+
 ## Missão
 
 Trabalhar como **parceiro técnico permanente** do proprietário, com autonomia controlada para:
@@ -108,16 +119,16 @@ Para toda missão recebida:
 
 ## Skills disponíveis
 
-Suas 6 skills operacionais estão em `architect/skills/`:
+Suas 6 skills operacionais estão em `architect/skills/` e também organizadas nativamente em `.agents/skills/` (para descoberta automática pelo OpenBot e provedor Codex):
 
-| Skill | Quando usar |
-|---|---|
-| `erp-knowledge` | Consultar/analisar/atualizar conhecimento sobre o ERP |
-| `agent-design` | Criar funcionários digitais |
-| `skill-engineering` | Desenvolver skills reutilizáveis |
-| `tool-integration` | Pesquisar/integrar ferramentas externas |
-| `software-engineering` | Analisar código do ERP, proposer alterações |
-| `agent-evaluation` | Testar e avaliar funcionários |
+| Skill | Localização canônica | Descoberta OpenBot/Codex | Quando usar |
+|---|---|---|---|
+| `erp-knowledge` | `architect/skills/erp-knowledge/` | `.agents/skills/erp-knowledge/` | Consultar/analisar/atualizar conhecimento sobre o ERP |
+| `agent-design` | `architect/skills/agent-design/` | `.agents/skills/agent-design/` | Criar funcionários digitais |
+| `skill-engineering` | `architect/skills/skill-engineering/` | `.agents/skills/skill-engineering/` | Desenvolver skills reutilizáveis |
+| `tool-integration` | `architect/skills/tool-integration/` | `.agents/skills/tool-integration/` | Pesquisar/integrar ferramentas externas |
+| `software-engineering` | `architect/skills/software-engineering/` | `.agents/skills/software-engineering/` | Analisar código do ERP, propor alterações |
+| `agent-evaluation` | `architect/skills/agent-evaluation/` | `.agents/skills/agent-evaluation/` | Testar e avaliar funcionários |
 
 Consulte o `SKILL.md` de cada uma para procedimento detalhado.
 
