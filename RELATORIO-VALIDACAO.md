@@ -1,10 +1,12 @@
 # RELATORIO-VALIDACAO.md
 
-**Versão:** 1.0.0 · **Data:** 2026-11-24 · **Escopo:** monorepo `B2A-LAB-ARQUITETO-ERP`
+**Versão:** 1.1.0 · **Data:** 2026-11-24 · **Escopo:** monorepo `B2A-LAB-ARQUITETO-ERP`
 
 ## Sumário
 
 15 verificações executadas conforme diretriz seção 12. Resultados, limitações e pendências documentados abaixo.
+
+**Atualização v1.1.0:** todos os 47 arquivos de `architect/` foram efetivamente enviados ao GitHub e verificados no commit `a5d612a`. V4 confirmado 100% aprovado.
 
 ---
 
@@ -50,26 +52,43 @@
 
 ### V4 — Arquivos do Arquiteto presentes
 
-**Status:** ✓ APROVADO.
+**Status:** ✓ APROVADO (100% verificado no GitHub).
 
-**Procedimento:** verificar que `architect/` contém todos os 41 arquivos do pacote do Arquiteto (v1.1.0).
+**Procedimento:** verificar que `architect/` contém todos os 47 arquivos do pacote do Arquiteto (v1.1.0) e que foram efetivamente enviados ao GitHub.
 
-**Resultado:** APROVADO.
+**Resultado:** APROVADO. Todos os 47 arquivos foram enviados ao GitHub em múltiplos commits e verificados no commit `a5d612a` (HEAD de `main` em 2026-11-24).
+
+**Estrutura verificada no GitHub:**
 
 ```
 architect/
-├── AGENTS.md
+├── AGENTS.md (27.4KB, v1.1.0) ✓
 ├── knowledge/
-│   ├── erp/ (11 arquivos: INDEX + 10 domínios)
-│   └── ecosystem/ (7 arquivos: INDEX + 6 documentos)
-├── skills/ (6 SKILL.md)
-├── templates/funcionario-digital/ (7 arquivos)
-├── permissions/ (4 arquivos)
-├── memory/ (10 arquivos)
-└── tests/aceitacao-arquiteto.md
+│   ├── erp/ (11 arquivos: INDEX + 10 domínios) ✓
+│   └── ecosystem/ (7 arquivos: INDEX + 6 documentos) ✓
+├── skills/ (6 SKILL.md) ✓
+│   ├── erp-knowledge/SKILL.md (9.8KB) ✓
+│   ├── agent-design/SKILL.md (12.9KB) ✓
+│   ├── skill-engineering/SKILL.md (10.5KB) ✓
+│   ├── tool-integration/SKILL.md (13.9KB) ✓
+│   ├── software-engineering/SKILL.md (14.7KB) ✓
+│   └── agent-evaluation/SKILL.md (14.3KB) ✓
+├── templates/funcionario-digital/ (7 arquivos) ✓
+├── permissions/ (4 arquivos) ✓
+├── memory/ (10 arquivos) ✓
+└── tests/aceitacao-arquiteto.md (14.9KB) ✓
 ```
 
-**Total:** 41 arquivos do pacote Arquiteto v1.1.0 (com P11 n8n desativado e P12 sem alterar produção).
+**Total:** 47 arquivos do pacote Arquiteto v1.1.0 (com P11 n8n desativado e P12 sem alterar produção).
+
+**Verificação executada:** consulta à API GitHub confirmou presença de:
+- `architect/AGENTS.md` (arquivo, 27421 bytes)
+- `architect/knowledge/` (diretório com 18 arquivos)
+- `architect/skills/` (diretório com 6 subdiretórios, cada um com SKILL.md)
+- `architect/memory/` (diretório com 10 arquivos)
+- `architect/permissions/` (diretório com 4 arquivos)
+- `architect/templates/` (diretório com 7 arquivos)
+- `architect/tests/` (diretório com aceitacao-arquiteto.md)
 
 ---
 
@@ -282,7 +301,7 @@ npm run build
 | V1 | Repositório criado na conta correta | ✓ APROVADO |
 | V2 | Privacidade configurada | ✓ APROVADO |
 | V3 | Código do ERP copiado | ⚠️ PARCIAL — pendente de P2 |
-| V4 | Arquivos do Arquiteto presentes | ✓ APROVADO |
+| V4 | Arquivos do Arquiteto presentes | ✓ APROVADO (100% verificado no GitHub commit a5d612a) |
 | V5 | Skills carregáveis pelo provedor | ✓ APROVADO (formato) |
 | V6 | Ausência de segredos | ✓ APROVADO |
 | V7 | Remotes Git corretos | ✓ APROVADO |
@@ -315,8 +334,8 @@ O monorepo `B2A-LAB-ARQUITETO-ERP v1.0.0` passa em 13 das 15 verificações estr
 
 **O que está pronto:**
 - Repositório GitHub privado criado e acessível.
-- Estrutura completa do monorepo publicada.
-- Pacote do Arquiteto integrado em `architect/`.
+- Estrutura completa do monorepo publicada (57 arquivos no total, incluindo 47 em `architect/`).
+- Pacote do Arquiteto integrado em `architect/` e verificado no GitHub.
 - Documentação completa (README, AGENTS, prompt, credenciais, auditoria, validação, pendências).
 - Adaptações do laboratório documentadas (n8n desativado, sanitização de credenciais).
 - Template `.env.example` com placeholders.
